@@ -22,7 +22,10 @@ public class MovieBO {
 
     public String getAvailableSeats(Long mid) {
         Movie movie = this.movieService.findById(mid);
-        return movie.getAvailableSeatsJson();
+        if(movie!=null)
+            return movie.getAvailableSeatsJson();
+        else
+            return "no movie exists with "+mid;
     }
 
     public Movie addMovie(Movie movie, Long tid) {

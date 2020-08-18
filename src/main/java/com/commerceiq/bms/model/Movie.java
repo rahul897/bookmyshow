@@ -37,6 +37,8 @@ public class Movie {
     String availableSeatsJson;
     @Transient
     Set<String> availableSeats = new HashSet<>();
+    @Transient
+    String message;
 
     public void preSave() {
         try {
